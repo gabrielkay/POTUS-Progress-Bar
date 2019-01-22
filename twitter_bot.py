@@ -1,4 +1,3 @@
-import requests
 import tweepy
 import datetime
 
@@ -17,12 +16,16 @@ def main():
     inaug = datetime.date(2017, 1, 20)
     today = datetime.date.today()
     diff = today - inaug
-    numDiff = diff.days
-    yesterDiff = numDiff - 1 #will break on inaugeration day
+    numDiff = float(diff.days)
+    yesterDiff = float(numDiff - 1) #will break on inaugeration day
     delta1 = numDiff / 1461
     delta2 = yesterDiff / 1461
     per1 = int(delta1 * 100)
     per2 = int(delta2 * 100)
+    print("Yesterday: ")
+    print(per2)
+    print("Today: ")
+    print(per1)
     if per1 != per2:
         numXs = per1 // 4
         numSpaces = 25 - numXs
