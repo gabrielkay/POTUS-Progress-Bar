@@ -20,11 +20,9 @@ def main():
     numDiff = diff.days
     yesterDiff = numDiff - 1 #will break on inaugeration day
     delta1 = numDiff / 1461
-    delta2 = numDiff / 1461
-    p1 = float(delta1)
-    p2 = float(delta2)
-    per1 = int(p1 * 100)
-    per2 = int(p2 * 100)
+    delta2 = yesterDiff / 1461
+    per1 = int(delta1 * 100)
+    per2 = int(delta2 * 100)
     if per1 != per2:
         numXs = per1 // 4
         numSpaces = 25 - numXs
